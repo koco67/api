@@ -19,7 +19,6 @@ dsn_tns = cx_Oracle.makedsn(url_attr,port_attr,sid)
 connection = cx_Oracle.connect(user='gtiprofiaccess', password = 'iP#5SsxuG3', dsn=dsn_tns)
 cursor = connection.cursor()
 
-# Function to check credentials
 def check_credentials(username, password):
     query = "SELECT password FROM API_USERS WHERE username = :username"
     cursor.execute(query, {'username': username})
@@ -36,14 +35,15 @@ def login():
         username = request.form['username']
         password = request.form['password']
         if check_credentials(username, password):
-            return redirect(url_for('update_row'))
+            return redirect(url_for('upload_row'))
         else:
             return "Username or password is incorrect"
 
     return render_template('login.html')
 
-@app.route("/update-row", methods=["GET", "POST"])
-def update_row():
+# up
+@app.route("/upload-row", methods=["GET", "POST"])
+def upload_row():
     if request.method == "POST":
         if 'file' not in request.files:
             return jsonify({"error": "No file part"}), 400#
@@ -81,7 +81,7 @@ def update_row():
             return jsonify({"error": str(e)}), 400
         
     return '''
-        <form method="POST" action="/update-row" enctype="multipart/form-data">
+        <form method="POST" action="/upload-row" enctype="multipart/form-data">
             <input type="file" name="file">
             <input type="submit" value="Upload">
         </form>
@@ -89,7 +89,7 @@ def update_row():
 @app.route("/try-again", methods=["GET"])
 def try_again():
     return '''
-        <form method="POST" action="/update-row" enctype="multipart/form-data">
+        <form method="POST" action="/upload-row" enctype="multipart/form-data">
             <input type="file" name="file">
             <input type="submit" value="Try Again">
         </form>
@@ -99,63 +99,3 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 
-"""
-
-
-            if file.filename.endswith('.csv'):
-                # Handle CSV file
-                data = []
-                stream = file.stream
-                csv_data = csv.reader(stream)
-                for row in csv_data:
-                    data.append(row)
-                
-                for row in data:
-                    query = "INSERT INTO projektdaten_webservice (institution, projecttitle) VALUES (:institution, :projecttitle)"
-                    cursor.execute(query, {'institution': row[0], 'projecttitle': row[1]})
-                connection.commit()
-                return jsonify({"message": "Data uploaded successfully"}), 200
-
-                
-                
-@app.route('/')
-def index():
-    cursor = connection.cursor()
-    cursor.execute("select projecttitle, startdate from PROJEKTDATEN_WEBSERVICE where companyname = 'OMQ GmbH'")
-    
-    for title, date in cursor:
-        print("Values:", title, date)
-    cursor.close()
-    connection.close()
-
-@app.route("/input-word", methods=["GET", "POST"])
-def input_word():
-    if request.method == "POST":
-        data = request.form.get("word")
-        return jsonify({"message": f"You entered the word: {data}"}), 200
-
-    return '''
-        <form method="POST" action="/input-word">
-            <label for="word">Enter a word:</label>
-            <input type="text" id="word" name="word">
-            <input type="submit" value="Submit">
-        </form>
-    '''
-@app.route("/update-institution", methods=["GET", "POST"])
-def create_projekt():
-    if request.method == "POST":
-        new_institution  = request.form.get("institution")
-        query="insert into projektdaten_webservice (institution) values (:institution)"
-        cursor.execute(query, {'institution': new_institution})
-        connection.commit()
-        return jsonify({"message": f"You entered the word: {new_institution}"}), 200
-
-    return '''
-        <form method="POST" action="/update-institution">
-            <label for="word">Enter new institution name:</label>
-            <input type="text" id="institution" name="institution">
-            <input type="submit" value="Submit">
-        </form>
-    '''   
-if __name__ == "__main__":
-    app.run(debug=True)"""
