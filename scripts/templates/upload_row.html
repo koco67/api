@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Row</title>
+    <style>
+        .main-content {
+            margin-top: 10px;
+            text-align: left;
+            margin-left: 10px; /* Adjust the margin as needed */
+        }
+        .example-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+
+        .example-button:hover {
+            background-color: #0056b3;
+        }
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        header img {
+            max-width: 100px; /* Adjust the size of the logos */
+            height: auto;
+        }
+        header .logo-images {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        .alert {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            color: gray; /* Adjust the text color */
+            padding: 10px;
+            font-size: 13px; /* Adjust the font size */
+        }
+        
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-images">
+            <img class="logo-exist" src="{{ url_for('static', filename='exist.jpg') }}" alt="Image 1">
+            <img class="logo-bmwk" src="{{ url_for('static', filename='bmwk.jpg') }}" alt="Image 2">
+        </div>
+    </header>
+    <div class="main-content">
+        {% if not html_response %}
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <div class="alert">
+                        {{ messages[0] }}
+                    </div>
+                {% endif %}
+            {% endwith %}
+            <form method="POST" action="/upload-row" enctype="multipart/form-data">
+                <input type="file" name="file">
+                <input type="submit" value="Upload">
+            </form>
+            <a class="example-button" href="/example-page">View Examples</a>
+        {% else %}
+            {{ html_response | safe }}
+        {% endif %}
+    </div>
+    <footer>
+        © COPYRIGHT PROJEKTTRÄGER JÜLICH 2023 | Adresse: Lützowstraße 109, 10785 Berlin | Telefon: 02461 612626
+    </footer>
+</body>
+</html>

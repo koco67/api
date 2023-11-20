@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Example Page</title>
+    <style>
+        a.download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 10px; /* Add margin between the buttons */
+        }
+
+        a.download-button:hover {
+            background-color: #0056b3;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        header img {
+            max-width: 100px; /* Adjust the size of the logos */
+            height: auto;
+        }
+        header .logo-images {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        .alert {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            color: gray; /* Adjust the text color */
+            padding: 10px;
+            font-size: 13px; /* Adjust the font size */
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-images">
+            <img class="logo-exist" src="{{ url_for('static', filename='exist.jpg') }}" alt="Image 1">
+            <img class="logo-bmwk" src="{{ url_for('static', filename='bmwk.jpg') }}" alt="Image 2">
+        </div>
+    </header>
+    <h1>Download JSON or CSV example file</h1>
+    <!-- Download JSON -->
+    <a href="{{ url_for('download_json') }}" download="example.json" class="download-button">Download JSON</a>
+
+    <!-- Download CSV -->
+    <a href="{{ url_for('download_csv') }}" download="example.csv" class="download-button">Download CSV</a>
+    <footer>
+        © COPYRIGHT PROJEKTTRÄGER JÜLICH 2023 | Adresse: Lützowstraße 109, 10785 Berlin | Telefon: 02461 612626
+    </footer>
+</body>
+</html>

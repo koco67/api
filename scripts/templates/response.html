@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0; /* Reset default margin */
+            padding: 0; /* Reset default padding */
+        }
+        header, footer {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        header img {
+            max-width: 100px; /* Adjust the size of the logos */
+            height: auto;
+        }
+        header .logo-images {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+        }
+        h1 {
+            color: #333;
+        }
+        .login-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin-top: 10px; /* Adjust the margin as needed */
+        }
+        .login-form {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+            display: inline-block;
+        }
+        .form-label {
+            text-align: left;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px; /* Adjust the margin as needed */
+        }
+        .form-button:hover {
+            background-color: #0056b3;
+        }
+        a.download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            margin-right: 1px; /* Add margin between the buttons */
+        }
+
+        a.download-button:hover {
+            background-color: #0056b3;
+        }
+        .alert {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        footer {
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: #ffffff;
+            color: gray; /* Adjust the text color */
+            padding: 10px;
+            font-size: 13px; /* Adjust the font size */
+
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-images">
+            <img class="logo-exist" src="{{ url_for('static', filename='exist.jpg') }}" alt="Image 1">
+            <img class="logo-bmwk" src="{{ url_for('static', filename='bmwk.jpg') }}" alt="Image 2">
+        </div>
+    </header>
+    <h2>Data uploaded successfully with the following FKZ and CompanyName:</h2>
+    <table>
+        <tr>
+            <th>CompanyName</th>
+            <th>FKZ</th>
+        </tr>
+        <!-- Insert dynamic content here -->
+        {{ table_content | safe }}
+    </table>
+    <br>
+    <button onclick="location.href='http://localhost:5000/upload-row'">Upload Another File</button>
+    <br>
+    <a href="{{ url_for('download_uploaded_data') }}" download="uploaded.csv" class="download-button">Download Uploaded Data</a>
+    </form>
+    <footer>
+        © COPYRIGHT PROJEKTTRÄGER JÜLICH 2023 | Adresse: Lützowstraße 109, 10785 Berlin | Telefon: 02461 612626
+    </footer>
+</body>
+</html>
