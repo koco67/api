@@ -95,9 +95,10 @@ def upload_row():
 
                                 html_response = api_methods.generate_html_response(response_messages)
 
-
-                        return html_response, 200
-                
+                            return html_response, 200
+                        else:
+                            return jsonify({"error": "Missing or incorrect keys in csv file, please view examples for more information"}), 400
+            
                 elif file.filename.endswith('.json'):
                     data = json.loads(file.read())
 
@@ -132,7 +133,11 @@ def upload_row():
 
                                 html_response = api_methods.generate_html_response(response_messages)
 
-                    return html_response, 200
+                        return html_response, 200
+                    else:
+                        return jsonify({"error": "Missing or incorrect keys in json file, please view examples for more information"}), 400
+        
+                    
                 else:
                     return jsonify({"error": "Unsupported file format"}), 400
 
