@@ -21,7 +21,6 @@ class Status:
                 return jsonify({"error": "No file found to upload"}), 400
             elif(args[0]=="NO_FILE_SELECTED"):
                 flash("No file selected, please select a csv or json file", 'error')
-                #return jsonify({"error": "No file selected, please select a csv or json file"}), 400
     
         else:
             return jsonify({"error": "Unknown status code"}), 400

@@ -30,7 +30,6 @@ def login():
             is_authenticated = True
             return redirect(url_for('upload_row'))
         else:
-            #flash("Username or password is incorrect", 'error')
             status.setStatus(401, "INCORRECT_LOGIN")
     return render_template('login.html')
 
@@ -46,13 +45,11 @@ def upload_row():
         
     if request.method == "POST":
         if 'file' not in request.files:
-            #return jsonify({"error": "No file part"}), 400
             status.setStatus(401, "NO_FILE")
         
         file = request.files['file']
 
         if file.filename == '':
-            #return jsonify({"error": "No selected file"}), 400
             status.setStatus(401,"NO_FILE_SELECTED")
             return render_template('upload_row.html')
 
@@ -148,6 +145,12 @@ def upload_row():
 @app.route('/example-page')
 def example_page():
     return render_template('example_page.html')
+
+@app.route('/sign-out', methods=['POST'])
+def sign_out():
+    global is_authenticated 
+    is_authenticated = False
+    return render_template('login.html')
 
 @app.route('/download-json')
 def download_json():
