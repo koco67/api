@@ -95,6 +95,19 @@
         a.download-button:hover {
             background-color: #0056b3;
         }
+        .example-button {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 100px;
+        }
+
+        .example-button:hover {
+            background-color: #0056b3;
+        }
         .alert {
             color: #721c24;
             background-color: #f8d7da;
@@ -135,6 +148,9 @@
     <button onclick="location.href='http://localhost:5000/upload-row'">Upload Another File</button>
     <br>
     <a href="{{ url_for('download_uploaded_data') }}" download="uploaded.csv" class="download-button">Download Uploaded Data</a>
+    </form>
+    <form method="POST" action="/sign-out">
+        <input type="submit" value="Sign Out" class="example-button">
     </form>
     <footer>
         © COPYRIGHT PROJEKTTRÄGER JÜLICH 2023 | Adresse: Lützowstraße 109, 10785 Berlin | Telefon: 02461 612626
