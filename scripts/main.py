@@ -64,25 +64,29 @@ def upload_row():
                 if file.filename.endswith('.csv'):
                     with io.TextIOWrapper(file.stream, encoding='utf-8') as text_file:
                         reader = csv.DictReader(text_file)
-                        response_messages = []  # Collect response messages for each row
+                        header = [key.upper() for key in reader.fieldnames]  # Get the header row and convert keys to uppercase
+                        new_reader = [{key.upper(): value.strip() if isinstance(value, str) else value for key, value in entry.items()} for entry in reader]
+
                         temp_csv_content.clear()
 
-                        for row in reader:
-                            row = {key: value.strip() if isinstance(value, str) else value for key, value in row.items()}
-                            query = "select count(*) + 1 from company where fkz like '03EEXT%'"
-                            current_fkz_number = cursor.getScalarResult(query,None)
-                            fkz_value = f"03EEXT{current_fkz_number:04d}"
-                            akz_value = fkz_value[3:]  
-                            row = {key.upper(): value for key, value in row.items()}
-                            """is_valid, error_message = api_methods.check_dates(reader)
+                        if all(key in header for key in ["VERBUNDBEZEICHNUNG", "THEMA", "LAUFZEITBEGINN", "LAUFZEITENDE", "BEWILLIGUNGSDATUM", "BEWILLIGUNGSSUMME", "COMPANYNAME", "FOUNDEDDATE", "URL", "EMAIL", "TEL", "STREET", "ZIPCODE", "CITY", "DESCRIPTION"]):
+
+                            is_valid, error_message = api_methods.check_dates(new_reader)
                             if not is_valid:
                             # Handle the error condition, e.g., flash the error message or return an error response
                                 flash(error_message, 'error')
                                 return redirect(url_for('upload_row'))
-                            else:
-                                """
-                            if all(key in row for key in ["VERBUNDBEZEICHNUNG", "THEMA", "LAUFZEITBEGINN", "LAUFZEITENDE", "BEWILLIGUNGSDATUM", "BEWILLIGUNGSSUMME", "COMPANYNAME", "FOUNDEDDATE", "URL", "EMAIL", "TEL", "STREET", "ZIPCODE", "CITY", "DESCRIPTION"]):
-
+                            
+                            response_messages = []  # Collect response messages for each row
+                     
+                            for row in new_reader:
+                                #row = {key: value.strip() if isinstance(value, str) else value for key, value in row.items()}
+                                query = "select count(*) + 1 from company where fkz like '03EEXT%'"
+                                current_fkz_number = cursor.getScalarResult(query,None)
+                                fkz_value = f"03EEXT{current_fkz_number:04d}"
+                                akz_value = fkz_value[3:]  
+                                #row = {key.upper(): value for key, value in row.items()}
+                                
                                 query = "INSERT INTO COMPANY (FKZ, AKZ, ACTIVE, COMPANYNAME, FOUNDEDDATE, URL, EMAIL, TEL, STREET, ZIPCODE, CITY, DESCRIPTION) VALUES (:FKZ, :AKZ, :ACTIVE, :COMPANYNAME, :FOUNDEDDATE, :URL, :EMAIL, :TEL, :STREET, :ZIPCODE, :CITY, :DESCRIPTION)"
                                 cursor.executeSQL(query, {'FKZ': fkz_value, 'AKZ': akz_value, 'ACTIVE': 1, 'COMPANYNAME': row['COMPANYNAME'], 'FOUNDEDDATE': row['FOUNDEDDATE'], 'URL': row['URL'], 'EMAIL': row['EMAIL'], 'TEL': row['TEL'], 'STREET': row['STREET'], 'ZIPCODE': row['ZIPCODE'], 'CITY': row['CITY'], 'DESCRIPTION': row['DESCRIPTION']})
                             
@@ -93,6 +97,7 @@ def upload_row():
                                 temp_csv_content.append({'FKZ': fkz_value, 'AKZ': akz_value, 'ACTIVE': 1, 'COMPANYNAME': row['COMPANYNAME'], 'FOUNDEDDATE': row['FOUNDEDDATE'], 'URL': row['URL'], 'EMAIL': row['EMAIL'], 'TEL': row['TEL'], 'STREET': row['STREET'], 'ZIPCODE': row['ZIPCODE'], 'CITY': row['CITY'], 'DESCRIPTION': row['DESCRIPTION'], 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
 
                                 html_response = api_methods.generate_html_response(response_messages)
+
 
                         return html_response, 200
                 

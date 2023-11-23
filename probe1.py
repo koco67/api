@@ -1,3 +1,4 @@
+
 """
 
 
@@ -58,3 +59,53 @@ def create_projekt():
     '''   
 if __name__ == "__main__":
     app.run(debug=True)"""
+
+
+
+
+
+
+from datetime import datetime
+
+"""
+def is_valid_date(date_string, date_format="%d.%m.%y"):
+    try:
+        # Attempt to parse the date using the specified format
+        datetime.strptime(date_string, date_format)
+        return True
+    except ValueError:
+        return False
+    
+def check_dates(data):
+    date_fields = ['LAUFZEITBEGINN', 'LAUFZEITENDE', 'BEWILLIGUNGSDATUM', 'FOUNDEDDATE']
+    invalid_dates = []
+
+    for field in date_fields:
+        date_value = data.get(field, '')
+        if not is_valid_date(date_value):
+            invalid_dates.append(field)
+
+    if invalid_dates:
+        message = f"Invalid dates in fields: {', '.join(invalid_dates)}"
+        # flash this message for api and return error
+    else:
+        return True
+"""
+def is_valid_date(date_string, date_format="%d.%m.%y"):
+    try:
+        # Attempt to parse the date using the specified format
+        datetime.strptime(date_string, date_format)
+        return True
+    except ValueError:
+        return False
+    
+json_data = [
+        {
+            "VERBUNDBEZEICHNUNG": "AAAVERBUNDBEZEICHNUNG1",
+            "THEMA": "thema1",
+            "LAUFZEITBEGINN": "1.12.99"
+        }]
+if is_valid_date(json_data[0]['LAUFZEITBEGINN']):
+    print("ok")
+else:
+    print("not ok")

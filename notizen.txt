@@ -1,0 +1,207 @@
+old configuration without proficon
+
+app.config['SECRET_KEY'] = 'key'
+serviceName_attr = 'FZJA.FZJ.DE'
+sid = 'FZJA'
+url_attr = 'ORASRV.ZAM.KFA-JUELICH.DE'
+port_attr = 1521
+clientDirectory_attr = \
+            r'c:\Users\dhamik\Desktop\instantclient_19_6'
+try:  # in case Ora Client lib has already been initialized
+    cx_Oracle.init_oracle_client(lib_dir=clientDirectory_attr)
+except Exception:
+    pass
+#normalerweise serviceName statt sid
+dsn_tns = cx_Oracle.makedsn(url_attr,port_attr,sid)
+connection = cx_Oracle.connect(user='gtiprofiaccess', password = 'iP#5SsxuG3', dsn=dsn_tns)
+cursor = connection.cursor()
+
+
+python main.py -ou gtiprofiaccess -op iP#5SsxuG3 
+
+
+**************************************************probe.py*******************************************
+"""
+
+
+            if file.filename.endswith('.csv'):
+                # Handle CSV file
+                data = []
+                stream = file.stream
+                csv_data = csv.reader(stream)
+                for row in csv_data:
+                    data.append(row)
+                
+                for row in data:
+                    query = "INSERT INTO projektdaten_webservice (institution, projecttitle) VALUES (:institution, :projecttitle)"
+                    cursor.execute(query, {'institution': row[0], 'projecttitle': row[1]})
+                connection.commit()
+                return jsonify({"message": "Data uploaded successfully"}), 200
+
+                
+                
+@app.route('/')
+def index():
+    cursor = connection.cursor()
+    cursor.execute("select projecttitle, startdate from PROJEKTDATEN_WEBSERVICE where companyname = 'OMQ GmbH'")
+    
+    for title, date in cursor:
+        print("Values:", title, date)
+    cursor.close()
+    connection.close()
+
+@app.route("/input-word", methods=["GET", "POST"])
+def input_word():
+    if request.method == "POST":
+        data = request.form.get("word")
+        return jsonify({"message": f"You entered the word: {data}"}), 200
+
+    return '''
+        <form method="POST" action="/input-word">
+            <label for="word">Enter a word:</label>
+            <input type="text" id="word" name="word">
+            <input type="submit" value="Submit">
+        </form>
+    '''
+@app.route("/update-institution", methods=["GET", "POST"])
+def create_projekt():
+    if request.method == "POST":
+        new_institution  = request.form.get("institution")
+        query="insert into projektdaten_webservice (institution) values (:institution)"
+        cursor.execute(query, {'institution': new_institution})
+        connection.commit()
+        return jsonify({"message": f"You entered the word: {new_institution}"}), 200
+
+    return '''
+        <form method="POST" action="/update-institution">
+            <label for="word">Enter new institution name:</label>
+            <input type="text" id="institution" name="institution">
+            <input type="submit" value="Submit">
+        </form>
+    '''   
+if __name__ == "__main__":
+    app.run(debug=True)"""
+
+
+**************************************************old main*******************************************
+
+
+
+
+
+
+tryagain
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Try Again</title>
+</head>
+<body>
+    <p>{{ message }}</p>
+    <form method="POST" action="/upload-row" enctype="multipart/form-data">
+        <input type="file" name="file">
+        <input type="submit" value="Try Again">
+    </form>
+</body>
+</html>
+
+
+
+
+login
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        h1 {
+            color: #333;
+        }
+        .login-form {
+            margin: 0 auto;
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #f5f5f5;
+        }
+        .form-label {
+            text-align: left;
+        }
+        .form-input {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .form-button:hover {
+            background-color: #0056b3;
+        }
+        .alert {
+            color: #721c24;
+            background-color: #f8d7da;
+            border: 1px solid #f5c6cb;
+            border-radius: 5px;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .image-container {
+            margin-top: 20px;
+        }
+        .example-button {
+            margin-top: 20px;
+            background-color: #28a745;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .example-button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Login</h1>
+    <div class="login-form">
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert">
+                    {{ messages[0] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <form method="POST" action="/">
+            <div class="form-label">
+                <label for="username">Username:</label>
+            </div>
+            <input class="form-input" type="text" id="username" name="username">
+            <div class="form-label">
+                <label for="password">Password:</label>
+            </div>
+            <input class="form-input" type="password" id="password" name="password">
+            <input class="form-button" type="submit" value="Login">
+        </form>
+        <div class="image-container">
+            <img class="example-image" src="{{ url_for('static', filename='exist.jpg') }}" alt="Example Image 1">
+            <img class="example-image" src="{{ url_for('static', filename='bmwk.jpg') }}" alt="Example Image 2">
+        </div>
+        <a class="example-button" href="/example-page">View Examples</a>
+    </div>
+</body>
+</html>
