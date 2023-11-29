@@ -7211,3 +7211,72 @@ AssertionError: applications must write bytes
 2023-11-29 12:28:50,363 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:50] "GET /change-password HTTP/1.1" 200 -
 2023-11-29 12:28:50,380 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:50] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
 2023-11-29 12:28:50,614 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:50] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:55:05,926 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:55:05,926 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:55:05,929 INFO:  * Restarting with stat
+2023-11-29 12:55:08,731 WARNING:  * Debugger is active!
+2023-11-29 12:55:08,735 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:55:14,193 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:14] "GET / HTTP/1.1" 200 -
+2023-11-29 12:55:14,482 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:14] "GET /static/exist.jpg HTTP/1.1" 200 -
+2023-11-29 12:55:14,526 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:14] "GET /static/bmwk.jpg HTTP/1.1" 200 -
+2023-11-29 12:55:16,352 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:16] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:55:16,634 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:16] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:55:16,958 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:16] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:55:16,964 INFO: 127.0.0.1 - - [29/Nov/2023 12:55:16] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:55:48,119 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\new_creds.py', reloading
+2023-11-29 12:55:48,298 INFO:  * Restarting with stat
+2023-11-29 12:55:51,316 WARNING:  * Debugger is active!
+2023-11-29 12:55:51,321 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:57:09,691 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:57:09,901 INFO:  * Restarting with stat
+2023-11-29 12:57:12,847 WARNING:  * Debugger is active!
+2023-11-29 12:57:12,851 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:57:17,797 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:57:17,798 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:57:17,800 INFO:  * Restarting with stat
+2023-11-29 12:57:20,639 WARNING:  * Debugger is active!
+2023-11-29 12:57:20,644 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:57:30,300 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:30] "GET / HTTP/1.1" 200 -
+2023-11-29 12:57:30,585 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:30] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:30,640 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:30] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:32,726 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:32] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:57:33,002 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:33] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:57:33,329 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:33] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:33,334 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:33] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:34,674 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:34] "POST /sign-out HTTP/1.1" 200 -
+2023-11-29 12:57:34,982 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:34] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:34,996 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:34] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:40,649 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:40] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:57:40,654 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:40] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:57:40,878 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:40] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:40,972 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:40] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:42,234 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:42] "GET /example-page HTTP/1.1" 200 -
+2023-11-29 12:57:42,285 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:42] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:42,483 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:42] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:42,706 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:42] "GET /download-json HTTP/1.1" 200 -
+2023-11-29 12:57:49,350 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:49] "POST /upload-row HTTP/1.1" 200 -
+2023-11-29 12:57:49,364 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:49] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:49,667 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:49] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:52,432 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:52] "POST /sign-out HTTP/1.1" 200 -
+2023-11-29 12:57:52,453 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:52] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:57:52,683 INFO: 127.0.0.1 - - [29/Nov/2023 12:57:52] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:59:05,213 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:59:05,386 INFO:  * Restarting with stat
+2023-11-29 12:59:07,947 WARNING:  * Debugger is active!
+2023-11-29 12:59:07,951 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:59:22,476 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:59:22,641 INFO:  * Restarting with stat
+2023-11-29 12:59:25,925 WARNING:  * Debugger is active!
+2023-11-29 12:59:25,929 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:59:28,330 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:59:28,489 INFO:  * Restarting with stat
+2023-11-29 12:59:31,301 WARNING:  * Debugger is active!
+2023-11-29 12:59:31,306 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 13:00:28,828 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\api_methods.py', reloading
+2023-11-29 13:00:28,937 INFO:  * Restarting with stat
+2023-11-29 13:00:32,309 WARNING:  * Debugger is active!
+2023-11-29 13:00:32,313 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 13:00:34,685 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 13:00:34,853 INFO:  * Restarting with stat

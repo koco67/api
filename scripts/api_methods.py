@@ -22,7 +22,7 @@ def store_credentials(username, password):
     hashed_password = hash_password(password)
 
     # Store the username and hashed password in the Oracle table
-    query = "INSERT INTO API_USERS_2 (username, password_hash) VALUES (:username, :password_hash)"
+    query = "INSERT INTO API_USERS (username, password_hash) VALUES (:username, :password_hash)"
     main.cursor.executeSQL(query, {'username': username, 'password_hash': hashed_password})
 
 def check_credentials(username, password):
@@ -30,7 +30,7 @@ def check_credentials(username, password):
     hashed_password_attempt = hash_password(password)
 
     # Fetch the hashed password from the database for the given username
-    query = "SELECT password_hash FROM API_USERS_2 WHERE username = :username"
+    query = "SELECT password_hash FROM API_USERS WHERE username = :username"
     stored_password_hash = main.cursor.getScalarResult(query, {'username': username})
 
     if stored_password_hash and hashed_password_attempt == stored_password_hash:

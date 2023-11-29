@@ -179,7 +179,7 @@ def change_password():
         # Check if the current password is correct
         if api_methods.check_credentials(last_username, current_password):
             # Update the password in the database
-            query = "UPDATE API_USERS_2 SET password_hash = :new_password WHERE username = :username"
+            query = "UPDATE API_USERS SET password_hash = :new_password WHERE username = :username"
             cursor.executeSQL(query, {'new_password': api_methods.hash_password(new_password), 'username': last_username})
 
             flash('Password changed successfully!', 'success')
