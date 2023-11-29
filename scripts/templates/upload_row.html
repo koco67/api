@@ -99,10 +99,15 @@
                 <input type="file" name="file">
                 <input type="submit" value="Upload">
             </form>
+
             <a class="example-button" href="/example-page">View Examples</a>
+
             <form method="POST" action="/sign-out">
                 <input type="submit" value="Sign Out" class="example-button">
             </form>
+            
+            <form method="GET" action="/change-password">
+                <input type="submit" value="Change Password" class="example-button">
         {% else %}
             {{ html_response | safe }}
         {% endif %}

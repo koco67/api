@@ -6981,3 +6981,233 @@ AssertionError: applications must write bytes
 2023-11-29 11:21:54,985 INFO: 127.0.0.1 - - [29/Nov/2023 11:21:54] "GET / HTTP/1.1" 200 -
 2023-11-29 11:21:55,287 INFO: 127.0.0.1 - - [29/Nov/2023 11:21:55] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
 2023-11-29 11:21:55,299 INFO: 127.0.0.1 - - [29/Nov/2023 11:21:55] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 11:29:17,399 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 11:29:17,399 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 11:29:17,401 INFO:  * Restarting with stat
+2023-11-29 11:29:20,110 WARNING:  * Debugger is active!
+2023-11-29 11:29:20,114 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 11:29:21,316 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:21] "GET / HTTP/1.1" 200 -
+2023-11-29 11:29:21,399 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:21] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 11:29:21,648 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:21] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 11:29:24,789 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:24] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 11:29:24,797 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:24] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 11:29:25,017 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:25] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 11:29:25,124 INFO: 127.0.0.1 - - [29/Nov/2023 11:29:25] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 11:52:44,501 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 11:52:44,731 INFO:  * Restarting with stat
+2023-11-29 12:02:42,040 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:02:42,040 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:02:42,049 INFO:  * Restarting with stat
+2023-11-29 12:02:44,709 WARNING:  * Debugger is active!
+2023-11-29 12:02:44,713 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:05:11,032 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:11] "GET / HTTP/1.1" 200 -
+2023-11-29 12:05:11,100 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:11] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:05:11,277 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:11] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:05:13,363 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:13] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:05:13,375 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:13] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:05:13,581 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:13] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:05:13,711 INFO: 127.0.0.1 - - [29/Nov/2023 12:05:13] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:07:41,711 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:07:41,968 INFO:  * Restarting with stat
+2023-11-29 12:07:45,837 WARNING:  * Debugger is active!
+2023-11-29 12:07:45,842 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:08:13,093 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:13] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:08:13,161 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:13] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:08:13,340 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:13] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:08:15,107 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:15] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:08:15,115 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:15] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:08:15,331 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:15] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:08:15,435 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:15] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:08:23,587 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:23] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:08:23,602 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:23] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:08:23,833 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:23] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:08:28,814 INFO: 127.0.0.1 - - [29/Nov/2023 12:08:28] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:09:27,231 INFO: 127.0.0.1 - - [29/Nov/2023 12:09:27] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:09:51,533 INFO: 127.0.0.1 - - [29/Nov/2023 12:09:51] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:09:51,552 INFO: 127.0.0.1 - - [29/Nov/2023 12:09:51] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:09:51,783 INFO: 127.0.0.1 - - [29/Nov/2023 12:09:51] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:10:03,050 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:03] "GET / HTTP/1.1" 200 -
+2023-11-29 12:10:03,308 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:03] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:10:03,386 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:03] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:10:04,792 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:04] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:10:05,076 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:05] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:10:05,405 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:05] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:10:05,405 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:05] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:10:09,511 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:09] "GET /example-page HTTP/1.1" 200 -
+2023-11-29 12:10:09,809 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:09] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:10:09,841 INFO: 127.0.0.1 - - [29/Nov/2023 12:10:09] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:11:22,961 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:22] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:11:22,966 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:22] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:11:23,189 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:23] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:11:23,300 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:23] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:11:24,655 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:24] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:11:24,678 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:24] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:11:24,902 INFO: 127.0.0.1 - - [29/Nov/2023 12:11:24] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:13:22,475 INFO: 127.0.0.1 - - [29/Nov/2023 12:13:22] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:13:22,493 INFO: 127.0.0.1 - - [29/Nov/2023 12:13:22] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:13:22,725 INFO: 127.0.0.1 - - [29/Nov/2023 12:13:22] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:30,377 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:30] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:15:30,393 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:30] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:30,627 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:30] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:33,916 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:33] "GET / HTTP/1.1" 200 -
+2023-11-29 12:15:34,167 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:34] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:34,252 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:34] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:51,138 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:51] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:15:51,419 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:51] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:15:51,751 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:51] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:51,754 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:51] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:52,555 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:52] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:15:52,856 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:52] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:15:52,885 INFO: 127.0.0.1 - - [29/Nov/2023 12:15:52] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:17:03,095 INFO: 127.0.0.1 - - [29/Nov/2023 12:17:03] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:17:03,118 INFO: 127.0.0.1 - - [29/Nov/2023 12:17:03] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:17:03,346 INFO: 127.0.0.1 - - [29/Nov/2023 12:17:03] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:20:26,347 INFO: 127.0.0.1 - - [29/Nov/2023 12:20:26] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:20:26,369 INFO: 127.0.0.1 - - [29/Nov/2023 12:20:26] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:20:26,598 INFO: 127.0.0.1 - - [29/Nov/2023 12:20:26] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:10,199 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:22:10,199 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:22:10,205 INFO:  * Restarting with stat
+2023-11-29 12:22:12,869 WARNING:  * Debugger is active!
+2023-11-29 12:22:12,875 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:22:14,020 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:14] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:22:14,021 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:14] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:22:14,106 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:14] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:14,348 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:14] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:40,931 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:22:41,085 INFO:  * Restarting with stat
+2023-11-29 12:22:48,297 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:22:48,298 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:22:48,301 INFO:  * Restarting with stat
+2023-11-29 12:22:51,068 WARNING:  * Debugger is active!
+2023-11-29 12:22:51,073 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:22:52,269 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:52] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:22:52,367 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:52] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:52,371 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:52] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:54,756 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:54] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:22:54,770 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:54] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:22:54,979 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:54] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:55,100 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:55] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:56,056 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:56] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:22:56,081 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:56] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:22:56,306 INFO: 127.0.0.1 - - [29/Nov/2023 12:22:56] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:23:01,335 INFO: 127.0.0.1 - - [29/Nov/2023 12:23:01] "[35m[1mPOST /change-password HTTP/1.1[0m" 500 -
+2023-11-29 12:23:01,369 INFO: 127.0.0.1 - - [29/Nov/2023 12:23:01] "GET /change-password?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2023-11-29 12:23:01,571 INFO: 127.0.0.1 - - [29/Nov/2023 12:23:01] "GET /change-password?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2023-11-29 12:23:01,935 INFO: 127.0.0.1 - - [29/Nov/2023 12:23:01] "GET /change-password?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2023-11-29 12:23:02,186 INFO: 127.0.0.1 - - [29/Nov/2023 12:23:02] "[36mGET /change-password?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2023-11-29 12:24:18,570 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:24:18,784 INFO:  * Restarting with stat
+2023-11-29 12:24:21,511 WARNING:  * Debugger is active!
+2023-11-29 12:24:21,515 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:24:23,265 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:24:23,422 INFO:  * Restarting with stat
+2023-11-29 12:24:32,262 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:24:32,262 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:24:32,265 INFO:  * Restarting with stat
+2023-11-29 12:24:34,940 WARNING:  * Debugger is active!
+2023-11-29 12:24:34,944 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:24:36,473 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:36] "GET / HTTP/1.1" 200 -
+2023-11-29 12:24:36,760 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:36] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:36,806 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:36] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:40,282 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:40] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:24:40,565 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:40] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:24:40,900 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:40] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:40,904 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:40] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:41,672 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:41] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:24:41,974 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:41] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:41,997 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:41] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:44,156 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:44] "POST /change-password HTTP/1.1" 200 -
+2023-11-29 12:24:44,181 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:44] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:44,407 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:44] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:50,325 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:24:50,488 INFO:  * Restarting with stat
+2023-11-29 12:24:53,230 WARNING:  * Debugger is active!
+2023-11-29 12:24:53,234 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:24:54,471 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:54] "GET / HTTP/1.1" 200 -
+2023-11-29 12:24:54,492 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:54] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:24:54,500 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:54] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:24:54,886 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:54] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:54,890 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:54] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:55,644 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:55] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:24:55,947 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:55] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:55,980 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:55] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:57,653 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:57] "POST /change-password HTTP/1.1" 200 -
+2023-11-29 12:24:57,680 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:57] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:24:57,898 INFO: 127.0.0.1 - - [29/Nov/2023 12:24:57] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:25:14,003 INFO:  * Detected change in 'C:\\Users\\dhamik\\Desktop\\api\\scripts\\main.py', reloading
+2023-11-29 12:25:14,171 INFO:  * Restarting with stat
+2023-11-29 12:25:16,977 WARNING:  * Debugger is active!
+2023-11-29 12:25:16,982 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:26:35,149 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:26:35,149 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:26:35,152 INFO:  * Restarting with stat
+2023-11-29 12:26:38,260 WARNING:  * Debugger is active!
+2023-11-29 12:26:38,264 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:26:47,292 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:47] "GET / HTTP/1.1" 200 -
+2023-11-29 12:26:47,573 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:47] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:47,624 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:47] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:49,612 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:49] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:26:49,893 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:49] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:26:50,227 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:50] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:50,231 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:50] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:50,974 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:50] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:26:51,277 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:51] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:51,303 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:51] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:55,113 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:55] "POST /change-password HTTP/1.1" 200 -
+2023-11-29 12:26:55,140 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:55] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:55,288 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:55] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:58,467 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:58] "POST / HTTP/1.1" 200 -
+2023-11-29 12:26:58,484 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:58] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:26:58,699 INFO: 127.0.0.1 - - [29/Nov/2023 12:26:58] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:27:00,617 INFO: 127.0.0.1 - - [29/Nov/2023 12:27:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:27:00,623 INFO: 127.0.0.1 - - [29/Nov/2023 12:27:00] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:27:00,843 INFO: 127.0.0.1 - - [29/Nov/2023 12:27:00] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:27:00,941 INFO: 127.0.0.1 - - [29/Nov/2023 12:27:00] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:04,987 INFO: [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on http://127.0.0.1:5000
+2023-11-29 12:28:04,988 INFO: [33mPress CTRL+C to quit[0m
+2023-11-29 12:28:04,993 INFO:  * Restarting with stat
+2023-11-29 12:28:08,366 WARNING:  * Debugger is active!
+2023-11-29 12:28:08,372 INFO:  * Debugger PIN: 216-936-101
+2023-11-29 12:28:09,970 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:09] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:28:09,972 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:09] "GET / HTTP/1.1" 200 -
+2023-11-29 12:28:09,974 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:09] "GET / HTTP/1.1" 200 -
+2023-11-29 12:28:10,366 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:10] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:10,374 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:10] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:11,969 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:11] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:28:12,252 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:12] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:28:12,586 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:12] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:12,591 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:12] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:13,691 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:13] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:28:13,992 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:13] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:14,026 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:14] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:21,036 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:21] "POST /change-password HTTP/1.1" 200 -
+2023-11-29 12:28:21,065 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:21] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:21,220 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:21] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:27,775 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:27] "POST / HTTP/1.1" 200 -
+2023-11-29 12:28:27,793 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:27] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:28,006 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:28] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:32,152 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:32] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:28:32,158 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:32] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:28:32,375 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:32] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:32,477 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:32] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:40,255 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:40] "POST /upload-row HTTP/1.1" 200 -
+2023-11-29 12:28:40,274 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:40] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:40,274 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:40] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:42,436 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:42] "POST /sign-out HTTP/1.1" 200 -
+2023-11-29 12:28:42,453 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:42] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:42,685 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:42] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:46,241 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:46] "[32mPOST / HTTP/1.1[0m" 302 -
+2023-11-29 12:28:46,247 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:46] "GET /upload-row HTTP/1.1" 200 -
+2023-11-29 12:28:46,466 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:46] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:46,571 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:46] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:50,363 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:50] "GET /change-password HTTP/1.1" 200 -
+2023-11-29 12:28:50,380 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:50] "[36mGET /static/exist.jpg HTTP/1.1[0m" 304 -
+2023-11-29 12:28:50,614 INFO: 127.0.0.1 - - [29/Nov/2023 12:28:50] "[36mGET /static/bmwk.jpg HTTP/1.1[0m" 304 -

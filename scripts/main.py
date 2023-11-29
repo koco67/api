@@ -18,6 +18,7 @@ status = Status()
 
 
 is_authenticated = False
+last_username = ""
 temp_csv_content = []
 
 # Login page
@@ -28,7 +29,9 @@ def login():
         password = request.form['password']
         if api_methods.check_credentials(username, password):
             global is_authenticated 
+            global last_username
             is_authenticated = True
+            last_username = username
             return redirect(url_for('upload_row'))
         else:
             status.setStatus(401, "INCORRECT_LOGIN")
@@ -156,6 +159,37 @@ def sign_out():
     global is_authenticated 
     is_authenticated = False
     return render_template('login.html')
+
+@app.route('/change-password', methods=['GET'])
+def change_password_page():
+    global is_authenticated 
+
+    if(is_authenticated is False):
+        status.setStatus(401, "INCORRECT_LOGIN")
+        return render_template('login.html')
+    return render_template('change_password.html')
+
+@app.route('/change-password', methods=['POST'])
+def change_password():
+    if is_authenticated:
+        # Get the old and new passwords from the form
+        current_password = request.form.get('current_password')
+        new_password = request.form.get('new_password')
+
+        # Check if the current password is correct
+        if api_methods.check_credentials(last_username, current_password):
+            # Update the password in the database
+            query = "UPDATE API_USERS_2 SET password_hash = :new_password WHERE username = :username"
+            cursor.executeSQL(query, {'new_password': api_methods.hash_password(new_password), 'username': last_username})
+
+            flash('Password changed successfully!', 'success')
+        else:
+            flash('Incorrect current password. Password not changed.', 'error')
+
+        return render_template('login.html')
+    else:
+        return render_template('response.html')
+
 
 @app.route('/download-json')
 def download_json():
