@@ -6,6 +6,8 @@ from flask import Flask, Response, request, jsonify, redirect, send_file, send_f
 from profi_control import ProfiControl
 from stdArgParser import getStandardArgParser
 from status import Status
+import api_methods
+import hashlib
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'key'
@@ -13,7 +15,6 @@ parser = getStandardArgParser()
 args = parser.parse_args()
 cursor = ProfiControl(args.oracleUser, args.oraclePassword, args.saveCredentials, args.setDefaultUser)
 status = Status()
-import api_methods
 
 
 is_authenticated = False
@@ -107,7 +108,6 @@ def upload_row():
                     temp_csv_content.clear()
 
                     if all(key.upper() in new_data[0] for key in ["VERBUNDBEZEICHNUNG", "THEMA", "LAUFZEITBEGINN", "LAUFZEITENDE", "BEWILLIGUNGSDATUM", "BEWILLIGUNGSSUMME", "COMPANYNAME", "FOUNDEDDATE", "URL", "EMAIL", "TEL", "STREET", "ZIPCODE", "CITY", "DESCRIPTION"]):
-                        #api_methods.check_dates(data)[0]
                         is_valid, error_message = api_methods.check_dates(new_data)
                         if not is_valid:
                             # Handle the error condition, e.g., flash the error message or return an error response

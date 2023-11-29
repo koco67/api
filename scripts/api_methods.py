@@ -1,7 +1,8 @@
 import datetime
 from flask import redirect, render_template, session, url_for
+import hashlib
+import os
 import main
-
     
 def generate_html_response(response_messages):
     # Dynamic content for the table
@@ -11,13 +12,30 @@ def generate_html_response(response_messages):
 
     return render_template('response.html', table_content=table_content)
 
+def hash_password(password):
+    # Hash the password using a secure hashing algorithm (e.g., SHA-256)
+    hashed_password = hashlib.sha256(password.encode('utf-8')).hexdigest()
+    return hashed_password
+
+def store_credentials(username, password):
+    # Hash the password before storing it in the database
+    hashed_password = hash_password(password)
+
+    # Store the username and hashed password in the Oracle table
+    query = "INSERT INTO API_USERS_2 (username, password_hash) VALUES (:username, :password_hash)"
+    main.cursor.executeSQL(query, {'username': username, 'password_hash': hashed_password})
+
 def check_credentials(username, password):
-    query = "SELECT password FROM API_USERS WHERE username = :username"
-    result = main.cursor.getScalarResult(query, {'username': username})
-    if result == password:
+    # Hash the provided password for comparison with the stored hashed password
+    hashed_password_attempt = hash_password(password)
+
+    # Fetch the hashed password from the database for the given username
+    query = "SELECT password_hash FROM API_USERS_2 WHERE username = :username"
+    stored_password_hash = main.cursor.getScalarResult(query, {'username': username})
+
+    if stored_password_hash and hashed_password_attempt == stored_password_hash:
         return True
-    else:
-        return False
+    return False
 
 def is_valid_date(date_string, date_format="%d.%m.%y"):
     try:
