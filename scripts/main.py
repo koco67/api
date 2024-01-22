@@ -18,7 +18,6 @@ status = Status()
 
 
 
-temp_csv_content = []
 
 # Ensure responses aren't cached
 @app.after_request
@@ -48,7 +47,7 @@ def sign_out():
 # up
 @app.route("/upload-row", methods=["GET", "POST"])
 def upload_row():
-    #global is_authenticated 
+    session['temp_csv_content'] = []
 
     if 'username' not in session:
         status.setStatus(401, "INCORRECT_LOGIN")
@@ -76,7 +75,7 @@ def upload_row():
                         header = [key.upper() for key in reader.fieldnames]  # Get the header row and convert keys to uppercase
                         new_reader = [{key.upper(): value.strip() if isinstance(value, str) else value for key, value in entry.items()} for entry in reader]
 
-                        temp_csv_content.clear()
+                        session['temp_csv_content'].clear()
 
                         if all(key in header for key in ["VERBUNDBEZEICHNUNG", "THEMA", "LAUFZEITBEGINN", "LAUFZEITENDE", "BEWILLIGUNGSDATUM", "BEWILLIGUNGSSUMME", "COMPANYNAME", "FOUNDEDDATE", "URL", "EMAIL", "TEL", "STREET", "ZIPCODE", "CITY", "DESCRIPTION"]):
 
@@ -103,7 +102,7 @@ def upload_row():
                                 cursor.executeSQL(query, {'FKZ': fkz_value, 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
                             
                                 response_messages.append({"FKZ": fkz_value, "CompanyName": row['COMPANYNAME']})
-                                temp_csv_content.append({'FKZ': fkz_value, 'AKZ': akz_value, 'ACTIVE': 1, 'COMPANYNAME': row['COMPANYNAME'], 'FOUNDEDDATE': row['FOUNDEDDATE'], 'URL': row['URL'], 'EMAIL': row['EMAIL'], 'TEL': row['TEL'], 'STREET': row['STREET'], 'ZIPCODE': row['ZIPCODE'], 'CITY': row['CITY'], 'DESCRIPTION': row['DESCRIPTION'], 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
+                                session['temp_csv_content'].append({'FKZ': fkz_value, 'AKZ': akz_value, 'ACTIVE': 1, 'COMPANYNAME': row['COMPANYNAME'], 'FOUNDEDDATE': row['FOUNDEDDATE'], 'URL': row['URL'], 'EMAIL': row['EMAIL'], 'TEL': row['TEL'], 'STREET': row['STREET'], 'ZIPCODE': row['ZIPCODE'], 'CITY': row['CITY'], 'DESCRIPTION': row['DESCRIPTION'], 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
 
                                 html_response = api_methods.generate_html_response(response_messages)
 
@@ -116,7 +115,7 @@ def upload_row():
 
                     #new_data = [{key.upper(): value for key, value in entry.items()} for entry in data]
                     new_data = [{key.upper(): value.strip() if isinstance(value, str) else value for key, value in entry.items()} for entry in data]
-                    temp_csv_content.clear()
+                    session['temp_csv_content'].clear()
 
                     if all(key.upper() in new_data[0] for key in ["VERBUNDBEZEICHNUNG", "THEMA", "LAUFZEITBEGINN", "LAUFZEITENDE", "BEWILLIGUNGSDATUM", "BEWILLIGUNGSSUMME", "COMPANYNAME", "FOUNDEDDATE", "URL", "EMAIL", "TEL", "STREET", "ZIPCODE", "CITY", "DESCRIPTION"]):
                         is_valid, error_message = api_methods.check_dates(new_data)
@@ -140,7 +139,7 @@ def upload_row():
                                 cursor.executeSQL(query, {'FKZ': fkz_value, 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
                                 
                                 response_messages.append({"FKZ": fkz_value, "CompanyName": row['COMPANYNAME']})
-                                temp_csv_content.append({'FKZ': fkz_value, 'AKZ': akz_value, 'ACTIVE': 1, 'COMPANYNAME': row['COMPANYNAME'], 'FOUNDEDDATE': row['FOUNDEDDATE'], 'URL': row['URL'], 'EMAIL': row['EMAIL'], 'TEL': row['TEL'], 'STREET': row['STREET'], 'ZIPCODE': row['ZIPCODE'], 'CITY': row['CITY'], 'DESCRIPTION': row['DESCRIPTION'], 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
+                                session['temp_csv_content'].append({'FKZ': fkz_value, 'AKZ': akz_value, 'ACTIVE': 1, 'COMPANYNAME': row['COMPANYNAME'], 'FOUNDEDDATE': row['FOUNDEDDATE'], 'URL': row['URL'], 'EMAIL': row['EMAIL'], 'TEL': row['TEL'], 'STREET': row['STREET'], 'ZIPCODE': row['ZIPCODE'], 'CITY': row['CITY'], 'DESCRIPTION': row['DESCRIPTION'], 'AKRONYM': row['COMPANYNAME'], 'EINGANGSDATUM': current_date, 'VERBUNDBEZEICHNUNG': row['VERBUNDBEZEICHNUNG'], 'THEMA': row['THEMA'], 'LAUFZEITBEGINN': row['LAUFZEITBEGINN'], 'LAUFZEITENDE': row['LAUFZEITENDE'], 'BEWILLIGUNGSDATUM': row['BEWILLIGUNGSDATUM'], 'BEWILLIGUNGSSUMME': row['BEWILLIGUNGSSUMME']})
 
                                 html_response = api_methods.generate_html_response(response_messages)
 
@@ -260,14 +259,35 @@ def download_csv():
 @app.route("/download-uploaded-data")
 def download_uploaded_data():
 
-    global temp_csv_content
     csv_content = "FKZ, AKZ, ACTIVE, COMPANYNAME, FOUNDEDDATE, URL, EMAIL, TEL, STREET, ZIPCODE, CITY, DESCRIPTION, AKRONYM, EINGANGSDATUM, VERBUNDBEZEICHNUNG, THEMA, LAUFZEITBEGINN, LAUFZEITENDE, BEWILLIGUNGSDATUM, BEWILLIGUNGSSUMME\n"
-    for row in temp_csv_content:
-        csv_content += ','.join(map(str, row.values())) + '\n'
-
+    for row in session['temp_csv_content']:
+        # Explicitly define the order of columns
+        ordered_values = [
+            row['FKZ'],
+            row['AKZ'],
+            row['ACTIVE'],
+            row['COMPANYNAME'],
+            row['FOUNDEDDATE'],
+            row['URL'],
+            row['EMAIL'],
+            row['TEL'],
+            row['STREET'],
+            row['ZIPCODE'],
+            row['CITY'],
+            row['DESCRIPTION'],
+            row['AKRONYM'],
+            row['EINGANGSDATUM'],
+            row['VERBUNDBEZEICHNUNG'],
+            row['THEMA'],
+            row['LAUFZEITBEGINN'],
+            row['LAUFZEITENDE'],
+            row['BEWILLIGUNGSDATUM'],
+            row['BEWILLIGUNGSSUMME']
+        ]
+        csv_content += ','.join(map(str, ordered_values)) + '\n'
     response = Response(csv_content, content_type='text/csv')
     response.headers["Content-Disposition"] = "attachment; filename=uploaded.csv"
-    temp_csv_content.clear()
+    session['temp_csv_content'].clear()
     return response
 
 if __name__ == '__main__':
